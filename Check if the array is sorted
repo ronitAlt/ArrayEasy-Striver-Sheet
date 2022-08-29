@@ -1,0 +1,12 @@
+class Solution {
+    public boolean check(int[] nums) {
+       int temp = nums[0] , count = 0;
+        for(int i: nums){
+            if(i < temp) count++;
+            if(count > 1) return false;
+            temp = i;
+        }
+        if(count==1 && nums[0] < nums[nums.length-1]) return false;
+        return true;
+    }
+}
